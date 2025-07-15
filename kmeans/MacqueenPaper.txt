@@ -7,3 +7,9 @@ u(i) is actually the centroid of each "said" cluster, imagine N increasing, the 
 towards random more and more, because you can then tweak features in infinitely possible manners, but let's stick to 2 dimensional analysis for once, tighter probabilities
 as you get closer to your centroid, to the centroid of your cluster, your probability spikes of belonging in that exact category, the farther you are, the more deviation
 you have and lesser the probability of belonging in that cluster.
+
+Now obviously, the one thing that we mean to minify is actually our standard deviation which comes with probabilities, of that point actually existing in the cluster,
+summation(integral of (s[i](z-u[i])^2)dp(z)), looks scary, but just deviation, which can be minimized by the kmeans clustering method, or you basically want to 
+maximize probability of finding an element near the cluster, because that will be categorized and honestly pretty neat. The pmf can only be found out once we 
+have decided what our centroids would be, kmeans is nothing but dividing your data on your own and then categorizing it, there's no "label" for what classification
+you have to put the datapoint with its features in, we create the classification classes.
