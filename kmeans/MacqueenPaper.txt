@@ -1,0 +1,9 @@
+This is an explanation of Macqueen's paper.
+
+We have data that is spread out in N dimensions, or let's say features, each outcome invoking one or other category of the data, we obviously have
+probability mass functions for finding the data points in a particular category. That pmf depends upon E(N) which is just a fancy word for how many features are there,
+it is pretty obvious that more features will spread out the pmf as now there are more possibilities, we might even have more categories which affects u(i) in itself,
+u(i) is actually the centroid of each "said" cluster, imagine N increasing, the i increases, the probability flattens, if N is infinitely large we push ourselves
+towards random more and more, because you can then tweak features in infinitely possible manners, but let's stick to 2 dimensional analysis for once, tighter probabilities
+as you get closer to your centroid, to the centroid of your cluster, your probability spikes of belonging in that exact category, the farther you are, the more deviation
+you have and lesser the probability of belonging in that cluster.
