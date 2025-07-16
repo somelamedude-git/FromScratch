@@ -10,6 +10,22 @@ you have and lesser the probability of belonging in that cluster.
 
 Now obviously, the one thing that we mean to minify is actually our standard deviation which comes with probabilities, of that point actually existing in the cluster,
 summation(integral of (s[i](z-u[i])^2)dp(z)), looks scary, but just deviation, which can be minimized by the kmeans clustering method, or you basically want to 
-maximize probability of finding an element near the cluster, because that will be categorized and honestly pretty neat. The pmf can only be found out once we 
-have decided what our centroids would be, kmeans is nothing but dividing your data on your own and then categorizing it, there's no "label" for what classification
-you have to put the datapoint with its features in, we create the classification classes.
+maximize probability of finding an element near the cluster, because that will be categorized and honestly pretty neat. kmeans is nothing but dividing your data on your own and then categorizing it, there's no "label" for what classification
+you have to put the datapoint with its features in, we create the classification classes. The pmf is basically the probability of finding the data 
+in those clusters, which actually exist way before you discover them 
+
+However as the number of datapoints increase, the precision becomes more and more, the centroids become more accurate.
+
+The signal interpretation:
+Let's say we have an individual A in the middle of the division, they can see all the points, then they observe a point z, assuming there are r categories
+or clusters in that dataset, A sees point z to be in cluster #3, so tey send #3 in the signal, not the point d, why send an N dimensional datapoint when you can simply
+send their cluster, a 1D datapoint, B who is standing outside oblivious to everything, recieves the signal, now they dn't know what datapoint A has observed,
+so the best bet will obviously be to assume point z to be the centroid of that cluster. Why?
+
+Here's a mathematical proof:
+Assume that the point they assume to be g for once, we don't know what g is
+We want to minimize (z-g)^2, (z-g)^g = (z-g)^T . (z-g);
+(z-g)^2 = z^T.z - 2.g^T.z + g^T.g;
+E[(z-g)^2] = E[z^T.z] -2.g^T.E[z] + g^T.g;
+differentiate, first argument is a constant by the way
+g = E[z]; final answer, which actually is the centroid of that cluster.
